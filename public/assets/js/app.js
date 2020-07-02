@@ -10,6 +10,7 @@ $(document).ready(function() {
     $('.cadastroCondutor .container #val_cnh').mask('00/00/0000');
     $('.cadastroCondutor .container #val_cnh').mask('00/00/0000');
     $('.cadastroCondutor .container #num_casa').mask('0000');
+    $('.cadastroCondutor .container #num_permissao').mask('0-000');
 
     // Busca de Localzação pelo CEP
 
