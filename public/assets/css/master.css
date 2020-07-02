@@ -20,166 +20,459 @@ body {
     font-family: 'Raleway', Arial, sans-serif;
 }
 
-/* Cabeçalho e Home */
+.clearfix::after, .clearfix::before {
+    content: '';
+    display: table;
+}
 
-.wrap {
-    display: flex;
-    flex-flow: row nowrap;
+.clearfix::after {
+    clear: both;
+}
+
+.success_message {
+    color: green;
+    margin-bottom: 20px;
+}
+
+.error_message {
+    color: crimson;
+    margin-bottom: 20px;
+}
+
+header {
+    background: rgb(103,93,219);
+    background: linear-gradient(90deg, rgba(103,93,219,1) 0%, rgba(50,6,121,1) 50%);
     width: 100%;
-    height: 100%;
+    height: 80px;
+    padding: 0 15%;
+    line-height: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.sideBar {
-    width: 20vw;
-    min-height: 100vh;
-    padding: 40px;
-}
-
-.sideBar .navigation ul {
-    list-style-type: none;
-}
-
-.sideBar .navigation ul li a {
+header .logo {
     text-decoration: none;
-    color: #272727;
-    font-weight: 500;
-    display: block;
-    padding: 8px 0;
-    transition: all .2s;
-}
-
-.sideBar .navigation ul li a:hover {
-    padding-left: 10px;
-}
-
-.content {
-    width: 80vw;
-    min-height: 100vh;
-}
-
-.content .mainContent {
-    padding: 40px;
-}
-
-.content .headerHome {
-    width: 100%;
-    height: 500px;
-    background-image: url('../img/banner.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
-    padding: 40px;
-}
-
-.content .headerHome .logo {
-    text-decoration: none;
-    color: #272727;
-    transition: all .2s;
-    font-size: 26pt;
-    font-weight: 500;
-}
-
-.content .headerHome .logo:hover {
-    color: #535252;
-}
-
-.content .header {
-    width: 100%;
-    margin-bottom: 40px;
-}
-
-.content .header .logo {
-    text-decoration: none;
-    color: #272727;
-    transition: all .2s;
-    font-size: 26pt;
-    font-weight: 500;
-}
-
-.content .header .logo:hover {
-    color: #535252;
-}
-
-.content .footer {
-    width: 100%;
-    background-color: #272727;
-    padding: 50px;
-}
-
-.content .footer h2 {
     color: #fff;
-    margin-bottom: 10px;
-}
-
-.content .footer p {
-    color: #d6d6d6;
-    width: 500px;
-    text-align: justify;
-}
-
-.cadClientePage .formContent {
-    width: 100%;
-    padding-bottom: 80px;
-}
-
-.cadClientePage .formContent .headerForm {
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(123,123,123,0.2);
-}
-
-.cadClientePage .formContent .headerForm h2 {
-    font-weight: 500;
-}
-
-.cadClientePage .formContent .block {
-    width: 100%;
-    display: flex;
-    flex-flow: row nowrap;
-    border-bottom: 1px solid rgba(123,123,123,0.2);
-    padding: 30px 0;
-}
-
-.cadClientePage .formContent .block .blockTitle {
-    width: 50%;
-}
-
-.cadClientePage .formContent .block .blockTitle h2 {
+    font-size: 20pt;
     font-weight: 400;
 }
 
-.cadClientePage .formContent .block .fields {
+header .logo span {
+    font-weight: 600;
+}
+
+header .navigation {
+    float: right;
+}
+
+header .navigation ul {
+    list-style: none;
+}
+
+header .navigation ul li {
+    display: inline-block;
+}
+
+header .navigation ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    transition: all .2s;
+}
+
+header .navigation ul li a:hover {
+    color: #bfc1f5;
+}
+
+header .navigation ul li a img {
+    width: 13px;
+    margin-left: 5px;
+}
+
+main {
+    min-height: calc(100vh - 137px);
+}
+
+.home .banner {
+    width: 100%;
+    height: 500px;
+    padding: 0 15%;
+    background: rgb(103,93,219);
+    background: linear-gradient(90deg, rgba(103,93,219,1) 0%, rgba(50,6,121,1) 50%);
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.home .banner > * {
+    flex-grow: 0;
     width: 50%;
 }
 
-.cadClientePage .formContent .block .fields label {
-    display: block;
-    margin-bottom: 10px;
+.home .banner .image-container {
+    background: url('../img/vetor-home.png');
+    background-repeat: no-repeat;
+    background-size: 450px;
+    background-position: center left;
+    min-width: 450px;
 }
 
-.cadClientePage .formContent .block .fields input, .cadClientePage .formContent .block .fields select {
-    display: block;
-    border: 1px solid rgba(123,123,123,0.2);
-    padding: 8px 10px;
-    margin-bottom: 15px;
-    width: 190px;
+.home .banner .inner {
+    padding-top: 100px;
 }
 
-.cadClientePage .formContent .submit {
-    background: #272727;
-    padding: 10px 20px;
+.home .banner .inner h2 {
     color: #fff;
-    cursor: pointer;
-    font-family: 'Raleway', Arial, sans-serif;
-    margin-top: 20px;
+    font-size: 40pt;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.home .banner .inner p {
+    color: #fff;
+    font-size: 16pt;
+    margin-bottom: 40px;
+}
+
+.home .banner .inner a {
+    text-decoration: none;
+    color: #4b4fa4;
+    background-color: #fff;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 13pt;
     transition: all .2s;
-    float: right;
+    font-weight: 600;
+}
+
+.home .banner .inner a:hover {
+    padding: 15px 35px;
+}
+
+.home .block1 {
+    width: 100%;
+    padding: 0 15%;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.home .block1 > * {
+    flex-grow: 0;
+    width: 50%;
+    padding: 100px 0;
+}
+
+.home .block1 .titulo h2 {
+    font-size: 50pt;
+    color: #272727;
+    position: relative;
+}
+
+.home .block1 .titulo h2::after {
+    content: '';
+    width: 40px;
+    height: 4px;
+    background-color: #4b4fa4;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    transition: all .2s;
+}
+
+.home .block1 .titulo:hover h2::after {
+    width: 60px;
+}
+
+.home .block1 .descricao {
+    padding-left: 20px;
+}
+
+.home .block1 .descricao .item h3 {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.home .block1 .descricao .item {
+    margin-bottom: 30px;
+}
+
+.login {
+    background-color: #eaeaea;
+    position: relative;
+}
+
+.login .form-container {
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 30px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     border-radius: 4px;
+    box-shadow: 0px 0px 8px rgba(123,123,123,0.2);
+    min-width: 300px;
 }
 
-.cadClientePage .formContent .submit:hover {
-    background-color: #535252;
+.login .form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login .form-container label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.login .form-container input {
+    display: block;
+    border-bottom: 1px solid rgba(123,123,123,0.2);
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    outline: none;
+    transition: all .2s;
+}
+
+.login .form-container input:focus {
+    border-bottom: 1px solid #3e167d;
+}
+
+.login .form-container .submit {
+    background-color: #320679;
+    color: #fff;
+    width: 100%;
+    padding: 10px 0;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: 600;
+    transition: all .2s;
+}
+
+.login .form-container .submit:hover {
+    background-color: #3e167d;
+}
+
+.login .form-container .cadastrar {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.login .form-container .cadastrar a {
+    color: #320679;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login .form-container .cadastrar a:hover {
+    text-decoration: underline;
+}
+
+.cadastro {
+    background-color: #eaeaea;
+    position: relative;
+}
+
+.cadastro .container {
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px rgba(123,123,123,0.2);
+    padding: 40px;
+    width: 600px;
+}
+
+.cadastro .container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 20pt;
+}
+
+.cadastro .container .items {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1;
+}
+
+.cadastro .container .items a {
+    width: 49%;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    padding: 30px 20px;
+    text-decoration: none;
+    transition: all .2s;
+}
+
+.cadastro .container .items a:first-child {
+    margin-right: 2%;
+}
+
+.cadastro .container .items .item-1 {
+    background-color: #703bff;
+}
+
+.cadastro .container .items .item-1:hover {
+    background-color: #632ef3;
+}
+
+.cadastro .container .items .item-2 {
+    background-color: #6224c5;
+}
+
+.cadastro .container .items .item-2:hover {
+    background-color: #5814c5;
+}
+
+.cadastro .container .items .item h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.cadastro .container .items .item p {
+    color: #fff;
+}
+
+.cadastroCliente,  .cadastroCondutor{
+    background-color: #eaeaea;
+    padding: 40px 0;
+}
+
+.cadastroCliente .container, .cadastroCondutor .container {
+    background-color: #fff;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px rgba(123,123,123,0.2);
+    padding: 40px;
+    width: 770px;
+    margin: 0 auto;
+}
+
+.cadastroCliente .container h2, .cadastroCondutor .container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cadastroCliente .container table, .cadastroCondutor .container table {
+    border-collapse: collapse;
+}
+
+.cadastroCliente .container tbody td, .cadastroCondutor .container tbody td {
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+
+.cadastroCliente .container h3, .cadastroCondutor .container h3 {
+    padding: 20px 0;
+    font-weight: 500;
+}
+
+.cadastroCliente .container label, .cadastroCondutor .container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.cadastroCliente .container input, .cadastroCliente .container select, .cadastroCondutor .container input, .cadastroCondutor .container select {
+    border-bottom: 2px solid rgba(123,123,123,0.2);
+    width: 220px;
+    padding: 8px 12px;
+    outline: none;
+}
+
+.cadastroCliente .container input:focus , .cadastroCliente .container select:focus, .cadastroCondutor .container input:focus , .cadastroCondutor .container select:focus {
+    border-bottom: 2px solid #3e167d;
+}
+
+.cadastroCliente .container .submit-container, .cadastroCondutor .container .submit-container {
+    text-align: right;
+    padding-top: 20px;
+}
+
+.cadastroCliente .container .submit, .cadastroCondutor .container .submit {
+    background-color: #320679;
+    color: #fff;
+    padding: 12px 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+}
+
+.condutores {
+    padding: 50px 15%;
+    background-color: #eaeaea;
+}
+
+.condutores .list {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.condutores .list .condutor {
+    background-color: #fff;
+    padding: 40px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 8px rgba(123,123,123,0.2);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: 330px;
+    text-decoration: none;
+    color: #272727;
+}
+
+.condutores .list .condutor h3 {
+    margin-bottom: 20px;
+}
+
+.condutores .list .condutor .endereco {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.condutores .list .condutor .veiculo {
+    font-weight: 600;
+    color: #909090;
+}
+
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background: rgb(103,93,219);
+    background: linear-gradient(90deg, rgba(103,93,219,1) 0%, rgba(50,6,121,1) 50%);
+    text-align: center;
+}
+
+footer p {
+    color: #efefef;
+    font-size: 11pt;
 }
